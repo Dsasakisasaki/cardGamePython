@@ -10,59 +10,17 @@
 
 
 #カード情報{No, カード名, power1,2,3, シンボル(勝敗により変わる)}
-cards = [
-    Golem({'cardNo': 0, 'name': "ゴーレム", 'symbol': ["a","a"] 'p1': 4 'p2': 8 'p3': 4}),
+cards = 
+    [
+    #ゴーレム
+    {'cardNo': 0, 'name': "ゴーレム", 'symbols': ["a","a"] 'p1': 4 'p2': 8 'p3': 4}),
 
-    Hero({'cardNo': 1, 'name': "勇者", 'symbol': ["b","b"] 'p1': 7 'p2': 5 'p3': 3}),
+    #勇者
+    {'cardNo': 1, 'name': "勇者", 'symbols': ["b","b"] 'p1': 7 'p2': 5 'p3': 3}),
     
-    Wizard({'cardNo': 2, 'name': "魔法使い", 'symbol': ["b","b"]'p1': 5 'p2': 3 'p3': 7})
-        ]
-
-
-# フィールド１(自分)
-class field1:
-    def data_set(self,symbol,p1):
-        self.symbol=['symlol']
-        self.power=['p1']
-
-# フィールド２(相手)
-class field2:
-    def data_set(self,symbol,p1):
-        self.symbol=['symlol']
-        self.power=['p1']
-
-# フィールド３(自分)
-class field3:
-    def data_set(self,symbol,p2):
-        self.symbol=['symlol']
-        self.power=['p2']
-    def symbol_set(self,symbol)
-        symbolResult=symbol[0]
-
-# フィールド４(相手)
-class field4:
-    def data_set(self,symbol,p2):
-        self.symbol=['symlol']
-        self.power=['p2']
-    def symbol_set(self,symbol)
-        symbolResult=symbol[0]
-
-# フィールド５(自分)
-class field5:
-    def data_set(self,symbol,p3):
-        self.symbol=['symlol']
-        self.power=['p3']
-    def symbol_set(self,symbol)
-        symbolResult=symbol[0]
-
-# フィールド６(相手)
-class field6:
-    def data_set(self,symbol,p3):
-        self.symbol=['symlol']
-        self.power=['p3']
-    def symbol_set(self,symbol)
-        symbolResult=symbol[0]
-
+    #魔法使い
+    {'cardNo': 2, 'name': "魔法使い", 'symbols': ["b","b"]'p1': 5 'p2': 3 'p3': 7}),
+    ]
 
 #アビリティ一覧
 def golem_ab:
@@ -70,3 +28,74 @@ def golem_ab:
 def hero_ab:
 
 def wizard:
+
+
+# フィールド１(自分)
+class Field1:
+    power = 0
+    symbol= ""#勝敗によりシンボル決定
+    symbols=[]#カードが持っているシンボル
+    def data_set(card):#入ってくるのがcards[0]ゴーレムとすると
+        self.symbols=card['symbols']
+        self.symbol=card['symbols'][0]
+        self.power=card['p1']
+    def symbol_lose()
+        symbolResult=card['symbols'][1]
+
+
+
+ 
+    
+# フィールド２(相手)
+class Field2:
+    power = 0
+    symbol= ""
+    def data_set(self,symbol,p1):
+        self.symbol=symbol[0]
+        self.power=p1
+    def symbol_lose()
+        symbolResult=symbol[1]
+
+# フィールド３(自分)
+class Field3:
+    power = 0
+    symbol= ""
+    def data_set(self,symbol,p2):
+        self.symbol=symbol[0]
+        self.power=p1
+    def symbol_lose()
+        symbolResult=symbol[1]
+
+# フィールド４(相手)
+class Field4:
+    power = 0
+    symbol= ""
+    def data_set(self,symbol,p2):
+        self.symbol=symbol[0]
+        self.power=p2
+    def symbol_lose()
+        symbolResult=symbol[1]
+
+# フィールド５(自分)
+class Field5:
+    power = 0
+    symbol= ""
+    def data_set(self,symbol,p3):
+        self.symbol=symbol[0]
+        self.power=p3
+    def symbol_lose()
+        symbolResult=symbol[1]
+
+# フィールド６(相手)
+class Field6:
+    power = 0
+    symbol= ""
+    def data_set(self,symbol,p3):
+        self.symbol=symbol[0]
+        self.power=p3
+    def symbol_lose()
+        symbolResult=symbol[1]
+
+
+#フィールドインスタンス作成
+field = Field().data_set(cards[])
