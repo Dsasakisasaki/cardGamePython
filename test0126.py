@@ -16,13 +16,13 @@ class field1:
         self.power=['p1']
 
 # フィールド２(相手)
-class field1:
+class field2:
     def data_set(self,symbol,p1):
         self.symbol=['symlol']
         self.power=['p1']
 
 # フィールド３(自分)
-class field1:
+class field3:
     def data_set(self,symbol,p1):
         self.symbol=['symlol']
         self.power=['p2']
@@ -30,7 +30,7 @@ class field1:
         self.symbol1=symbol1
 
 # フィールド４(相手)
-class field1:
+class field4:
     def data_set(self,symbol,p1):
         self.symbol=['symlol']
         self.power=['p2']
@@ -40,7 +40,7 @@ class field1:
 
 
 # フィールド５(自分)
-class field1:
+class field5:
     def data_set(self,symbol,p1):
         self.symbol=['symlol']
         self.power=['p3']
@@ -49,7 +49,7 @@ class field1:
 
 
 # フィールド６(相手)
-class field1:
+class field6:
     def data_set(self,symbol,p1):
         self.symbol=['symlol']
         self.power=['p3']
