@@ -9,6 +9,16 @@
 #二試合目開始　相手２、自分２のインスタンス作成
 
 
+#カード情報{No, カード名, power1,2,3, シンボル(勝敗により変わる)}
+cards = [
+    Golem({'cardNo': 0, 'name': "ゴーレム", 'symbol': ["a","a"] 'p1': 4 'p2': 8 'p3': 4}),
+
+    Hero({'cardNo': 1, 'name': "勇者", 'symbol': ["b","b"] 'p1': 7 'p2': 5 'p3': 3}),
+    
+    Wizard({'cardNo': 2, 'name': "魔法使い", 'symbol': ["b","b"]'p1': 5 'p2': 3 'p3': 7})
+        ]
+
+
 # フィールド１(自分)
 class field1:
     def data_set(self,symbol,p1):
@@ -23,48 +33,36 @@ class field2:
 
 # フィールド３(自分)
 class field3:
-    def data_set(self,symbol,p1):
+    def data_set(self,symbol,p2):
         self.symbol=['symlol']
         self.power=['p2']
-    def symbol1_set(self,symbol1)
-        self.symbol1=symbol1
+    def symbol_set(self,symbol)
+        symbolResult=symbol[0]
 
 # フィールド４(相手)
 class field4:
-    def data_set(self,symbol,p1):
+    def data_set(self,symbol,p2):
         self.symbol=['symlol']
         self.power=['p2']
-    def symbol2_set(self,symbol2)
-         self.symbol2=symbol2
-
-
+    def symbol_set(self,symbol)
+        symbolResult=symbol[0]
 
 # フィールド５(自分)
 class field5:
-    def data_set(self,symbol,p1):
+    def data_set(self,symbol,p3):
         self.symbol=['symlol']
         self.power=['p3']
-    def symbol2_set(self,symbol3)
-        self.symbol3=symbol3
-
+    def symbol_set(self,symbol)
+        symbolResult=symbol[0]
 
 # フィールド６(相手)
 class field6:
-    def data_set(self,symbol,p1):
+    def data_set(self,symbol,p3):
         self.symbol=['symlol']
         self.power=['p3']
-    def symbol2_set(self,symbol4)
-        self.symbol4=symbol4
+    def symbol_set(self,symbol)
+        symbolResult=symbol[0]
 
-
-#カード名、power1,2,3、シンボル(勝敗により変わる)
-cards = [
-    Golem({'cardNo': 0, 'name': "ゴーレム", 'symbol': ["a","a"] 'p1': 4 'p2': 8 'p3': 4}),
-
-    Hero({'cardNo': 1, 'name': "勇者", 'symbol': ["b","b"] 'p1': 7 'p2': 5 'p3': 3}),
-    
-    Wizard({'cardNo': 2, 'name': "魔法使い", 'symbol': ["b","b"]'p1': 5 'p2': 3 'p3': 7})
-        ]
 
 #アビリティ一覧
 def golem_ab:
